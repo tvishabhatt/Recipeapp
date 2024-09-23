@@ -33,7 +33,7 @@ class _LikedRecipePageState extends State<LikedRecipePage> {
           List<QueryDocumentSnapshot<Map<String,dynamic>>> allrecipes = snapshot.data!.docs;
           return ListView.builder(
             itemBuilder: (context, i) {
-            return ListTile(
+            return allrecipes.isNotEmpty?Text("Do Liked recipe yet"):ListTile(
               title: Text("Name : ${allrecipes[i]['name']}"),
               subtitle: Text("Descirpation : ${allrecipes[i]['descirpation']}"),
               trailing: IconButton(onPressed: () {
